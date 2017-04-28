@@ -1,0 +1,16 @@
+{
+  "title": "ODIS - secure plugin",
+  "name": "odis-sec",
+  "version": "0.0.1",
+  "description": "Odis - secure plugin",
+  "main": "index.js",
+  "author": "Adam Michna, Tomasz Niedziela-Brach, Daniel Dyl",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ]
+}
