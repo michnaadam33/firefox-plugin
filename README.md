@@ -1,4 +1,8 @@
 #ODIS firefox plugin
+##Inicjalizacja projektu
+* `$ cd rest` - otwórz folder rest
+* `$ php composer.phar install` - instalacja paczak, konfiguracja środowiska
+
 ##Start REST Service
 * `$ cd rest` - otwórz folder rest
 * `$ /bin/console server:start` - start REST server
