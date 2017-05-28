@@ -26,6 +26,16 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/ping", name="ping")
+     */
+    public function pingAction(Request $request)
+    {
+        $arr = ['pong'];
+
+        return JsonResponse::create($arr);
+    }
+
+    /**
      * @Route("/", name="main")
      */
     public function indexAction(Request $request)
