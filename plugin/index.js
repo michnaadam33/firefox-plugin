@@ -26,7 +26,10 @@ function runScript(tab) {
         onComplete: function (response) {
            var arr = JSON.parse(response.text );
             tab.attach({
-                contentScriptFile: self.data.url("./content-script.js"),
+                contentScriptFile: [
+                    self.data.url("./jquery.min.js"),
+                    self.data.url("./content-script.js")
+                ],
                 contentScriptOptions: {"arr" : arr, 'url': tab.url}
             });
         }
