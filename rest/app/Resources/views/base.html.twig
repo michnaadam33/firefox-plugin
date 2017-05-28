@@ -2,12 +2,27 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}ODIS{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% stylesheets
+        'bundles/app/css/bootstrap.css'
+        'bundles/app/css/main.css'
+        filter='cssrewrite' output='css/app.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
     </head>
     <body>
+    <div class="container">
+        <div class="page-header">
+            <h1>{% block header %}ODIS{% endblock %}</h1>
+        </div>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    </div>
+        {% block javascripts %}
+            <script src="{{ asset('bundles/app/js/jquery.min.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
+        {% endblock %}
     </body>
+
 </html>

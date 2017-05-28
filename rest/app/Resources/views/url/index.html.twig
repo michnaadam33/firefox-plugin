@@ -1,13 +1,12 @@
 {% extends 'base.html.twig' %}
-
+{% block header %}Urls list{% endblock %}
 {% block body %}
-    <h1>Urls list</h1>
-
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Regex</th>
+                <th>Selector</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -16,6 +15,7 @@
             <tr>
                 <td><a href="{{ path('url_show', { 'id': url.id }) }}">{{ url.id }}</a></td>
                 <td>{{ url.regex }}</td>
+                <td>{{ url.selector }}</td>
                 <td>
                     <ul>
                         <li>
@@ -30,10 +30,5 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('url_new') }}">Create a new url</a>
-        </li>
-    </ul>
+            <a class="btn btn-default" href="{{ path('url_new') }}">Create a new url</a>
 {% endblock %}
