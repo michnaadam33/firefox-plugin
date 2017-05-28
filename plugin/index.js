@@ -15,7 +15,7 @@ var button = buttons.ActionButton({
 });
 
 function handleClick(state) {
-    tabs.open("http://www.agh.edu.pl/");
+    tabs.open("http://localhost:8000/url");
 }
 
 tabs.on("ready", runScript);
@@ -31,7 +31,4 @@ function runScript(tab) {
             });
         }
     }).get();
-
-
-    console.log(tab.url);
 }

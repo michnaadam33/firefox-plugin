@@ -14,6 +14,7 @@ class UrlType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('regex');
+        $builder->add('selector');
     }
     
     /**

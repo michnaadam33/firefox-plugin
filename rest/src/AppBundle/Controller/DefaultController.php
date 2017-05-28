@@ -18,10 +18,10 @@ class DefaultController extends Controller
         /** @var UrlRepository $urlRepository */
         $urlRepository = $this->getDoctrine()->getRepository('AppBundle:Url');
         $arr = $urlRepository->createQueryBuilder('u')
-            ->select('u.regex')
+            ->select('u.regex', 'u.selector')
             ->getQuery()
             ->getArrayResult();
 
-        return JsonResponse::create(array_column($arr, 'regex'));
+        return JsonResponse::create($arr);
     }
 }

@@ -28,6 +28,13 @@ class Url
      */
     private $regex;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="selector", type="string", length=255, nullable=true)
+     */
+    private $selector;
+
 
     /**
      * Get id
@@ -62,5 +69,23 @@ class Url
     {
         return $this->regex;
     }
+
+    /**
+     * @return string
+     */
+    public function getSelector()
+    {
+        return $this->selector;
+    }
+
+    /**
+     * @param string $selector
+     */
+    public function setSelector($selector)
+    {
+        $this->selector = $selector;
+    }
+
+
 }
 
