@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Url controller.
  *
- * @Route("url")
+ * @Route("/url")
  */
 class UrlController extends Controller
 {

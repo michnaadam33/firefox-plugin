@@ -80,10 +80,13 @@ class Url
 
     /**
      * @param string $selector
+     * @return Url
      */
     public function setSelector($selector)
     {
         $this->selector = $selector;
+
+        return $this;
     }
 
 

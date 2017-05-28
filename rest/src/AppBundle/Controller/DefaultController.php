@@ -24,4 +24,12 @@ class DefaultController extends Controller
 
         return JsonResponse::create($arr);
     }
+
+    /**
+     * @Route("/", name="main")
+     */
+    public function indexAction(Request $request)
+    {
+        return $this->render('default/index.html.twig');
+    }
 }
