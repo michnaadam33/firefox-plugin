@@ -15,6 +15,8 @@ class UrlType extends AbstractType
     {
         $builder->add('regex');
         $builder->add('selector');
+        $builder->add('startDate');
+        $builder->add('endDate');
     }
     
     /**

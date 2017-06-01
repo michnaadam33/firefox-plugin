@@ -7,6 +7,8 @@
                 <th>Id</th>
                 <th>Regex</th>
                 <th>Selector</th>
+                <th>Start date</th>
+                <th>End date</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -16,6 +18,8 @@
                 <td><a href="{{ path('url_show', { 'id': url.id }) }}">{{ url.id }}</a></td>
                 <td>{{ url.regex }}</td>
                 <td>{{ url.selector }}</td>
+                <td>{{ url.startDate is empty ? "∞" : url.startDate | date("F jS \\a\\t g:ia") }}</td>
+                <td>{{ url.endDate is empty ? "∞" :url.endDate | date("F jS \\a\\t g:ia") }}</td>
                 <td>
                     <ul>
                         <li>
