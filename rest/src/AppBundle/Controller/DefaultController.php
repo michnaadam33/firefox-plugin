@@ -22,7 +22,24 @@ class DefaultController extends Controller
             ->getQuery()
             ->getArrayResult();
 
-        return JsonResponse::create($arr);
+
+        return JsonResponse::create($this->converseDate($arr));
+    }
+
+    /**
+     * @param array $arr
+     * @return array
+     */
+    private function converseDate(array $arr){
+        foreach ($arr as $key =>$url){
+            if($url['startDate']){
+                $arr[$key]['startDate'] = ($url['startDate'])->getTimestamp();
+            }
+            if($url['endDate']){
+                $arr[$key]['endDate'] = ($url['endDate'])->getTimestamp();
+            }
+        }
+        return $arr;
     }
 
     /**
