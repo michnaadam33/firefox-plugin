@@ -6,7 +6,7 @@
         {{ form_start(delete_form) }}
         <div class="btn-group">
             <a href="{{ path('url_index') }}" class="btn bg-info">Back to the list</a>
-            <a type="submit" class="btn btn-danger" onclick='return confirm("Are you sure?")'>Delete</a>
+            <button type="submit" class="btn btn-danger" onclick='return confirm("Are you sure?")'>Delete</button>
         </div>
         {{ form_end(delete_form) }}
     </div>
