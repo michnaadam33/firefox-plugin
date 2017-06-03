@@ -3,11 +3,16 @@
 
 {% block body %}
     {{ form_start(form) }}
+<div class="row">
+
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+
+</div>
+<div class="row">
+<div class="btn-group">
+    <button type="submit" value="Create" class="btn btn-success" >Create</button>
+    <a href="{{ path('url_index') }}" class="btn bg-info">Back to the list</a>
+</div>
+</div>
     {{ form_end(form) }}
-
-
-            <a href="{{ path('url_index') }}" class="btn bg-info">Back to the list</a>
-
 {% endblock %}

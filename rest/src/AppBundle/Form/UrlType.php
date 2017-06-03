@@ -16,18 +16,21 @@ class UrlType extends AbstractType
     {
         $builder->add('regex');
         $builder->add('selector');
-        $builder->add('startDate',DateType::class, [
-        'widget' => 'single_text',
-        'html5' => false,
-        'attr' => ['class' => 'js-datepicker'],
-    ]);
-        $builder->add('endDate',DateType::class, [
+        $builder->add('phrase');
+        $builder->add('startDate', DateType::class, [
             'widget' => 'single_text',
             'html5' => false,
             'attr' => ['class' => 'js-datepicker'],
+            'required' => false
+        ]);
+        $builder->add('endDate', DateType::class, [
+            'widget' => 'single_text',
+            'html5' => false,
+            'attr' => ['class' => 'js-datepicker'],
+            'required' => false
         ]);
     }
-    
+
     /**
      * {@inheritdoc}
      */

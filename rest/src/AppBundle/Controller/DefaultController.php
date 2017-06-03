@@ -18,7 +18,7 @@ class DefaultController extends Controller
         /** @var UrlRepository $urlRepository */
         $urlRepository = $this->getDoctrine()->getRepository('AppBundle:Url');
         $arr = $urlRepository->createQueryBuilder('u')
-            ->select('u.regex', 'u.selector','u.startDate','u.endDate')
+            ->select('u.regex', 'u.selector','u.startDate','u.endDate','u.phrase')
             ->getQuery()
             ->getArrayResult();
 

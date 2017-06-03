@@ -36,6 +36,12 @@ class Url
     private $selector;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="phrase", type="string", length=255, nullable=true)
+     */
+    private $phrase;
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="start_date", type="datetime", nullable=true)
@@ -102,6 +108,24 @@ class Url
 
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getPhrase()
+    {
+        return $this->phrase;
+    }
+
+    /**
+     * @param string $phrase
+     */
+    public function setPhrase($phrase)
+    {
+        $this->phrase = $phrase;
+    }
+
+
 
     /**
      * @return \DateTime
