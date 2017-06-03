@@ -20,9 +20,16 @@
         {% block body %}{% endblock %}
     </div>
         {% block javascripts %}
-            <script src="{{ asset('bundles/app/js/jquery.min.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/jquery-3.2.1.min.js') }}"></script>
             <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/bootstrap-datepicker.min.js') }}"></script>
+            <script>
+                $(document).ready(function() {
+                    $('.js-datepicker').datepicker({
+                        format: 'yyyy-mm-dd'
+                    });
+                });
+            </script>
         {% endblock %}
     </body>
-
 </html>

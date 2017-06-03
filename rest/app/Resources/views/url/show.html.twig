@@ -2,38 +2,38 @@
 {% block header %}Url{% endblock %}
 
 {% block body %}
-    <div>
-        <div class="btn-group btn-group-justified">
-            <a href="{{ path('url_index') }}" class="btn bg-info">Back to the list</a>
-            <a href="{{ path('url_edit', { 'id': url.id }) }}" class="btn bg-info">Edit</a>
-
-
+    <div class="row">
+        <div class="btn-group">
+            <a href="{{ path('url_index') }}" class="btn bg-primary">Back to the list</a>
+            <a href="{{ path('url_edit', { 'id': url.id }) }}" class="btn bg-primary">Edit</a>
         </div>
     </div>
-    <div>
-    <table class="table">
-        <tbody>
-        <tr>
-            <th>Id</th>
-            <td>{{ url.id }}</td>
-        </tr>
-        <tr>
-            <th>Regex</th>
-            <td>{{ url.regex }}</td>
-        </tr>
-        <tr>
-            <th>Start date</th>
-            <td>{{ url.startDate is empty ? "∞" : url.startDate | date("F jS \\a\\t g:ia") }}</td>
-        </tr>
-        <tr>
-            <th>End date</th>
-            <td>{{ url.endDate is empty ? "∞" : url.endDate | date("F jS \\a\\t g:ia") }}</td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="row">
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ url.id }}</td>
+            </tr>
+            <tr>
+                <th>Regex</th>
+                <td>/{{ url.regex }}/</td>
+            </tr>
+            <tr>
+                <th>Start date</th>
+                <td>{{ url.startDate is empty ? "∞" : url.startDate | localizeddate('full', 'none', app.request.locale ) }}</td>
+            </tr>
+            <tr>
+                <th>End date</th>
+                <td>{{ url.endDate is empty ? "∞" : url.endDate | localizeddate('full', 'none', app.request.locale ) }}</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
+    <div class="row">
     {{ form_start(delete_form) }}
-    <button type="submit" class="btn btn-danger">Delete</button>
+    <button type="submit" class="btn btn-danger" onclick='return confirm("Are you sure?")'>Delete</button>
     {{ form_end(delete_form) }}
+    </div>
 
 {% endblock %}

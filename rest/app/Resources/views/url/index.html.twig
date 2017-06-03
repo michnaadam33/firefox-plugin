@@ -18,8 +18,8 @@
                 <td><a href="{{ path('url_show', { 'id': url.id }) }}">{{ url.id }}</a></td>
                 <td>{{ url.regex }}</td>
                 <td>{{ url.selector }}</td>
-                <td>{{ url.startDate is empty ? "∞" : url.startDate | date("F jS \\a\\t g:ia") }}</td>
-                <td>{{ url.endDate is empty ? "∞" :url.endDate | date("F jS \\a\\t g:ia") }}</td>
+                <td>{{ url.startDate is empty ? "∞" : url.startDate  | localizeddate('full', 'none', app.request.locale ) }}</td>
+                <td>{{ url.endDate is empty ? "∞" :url.endDate  | localizeddate('full', 'none', app.request.locale ) }}</td>
                 <td>
                     <ul>
                         <li>

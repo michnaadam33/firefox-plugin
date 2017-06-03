@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class UrlType extends AbstractType
 {
@@ -15,8 +16,16 @@ class UrlType extends AbstractType
     {
         $builder->add('regex');
         $builder->add('selector');
-        $builder->add('startDate');
-        $builder->add('endDate');
+        $builder->add('startDate',DateType::class, [
+        'widget' => 'single_text',
+        'html5' => false,
+        'attr' => ['class' => 'js-datepicker'],
+    ]);
+        $builder->add('endDate',DateType::class, [
+            'widget' => 'single_text',
+            'html5' => false,
+            'attr' => ['class' => 'js-datepicker'],
+        ]);
     }
     
     /**
