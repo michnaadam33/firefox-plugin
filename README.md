@@ -11,6 +11,5 @@
 * `$ cd plugin` - otwórz folder plugin
 * `$ ./node_modules/.bin/jpm run` - uruchom plugin
 
-## TODO
-
-* blokowanie konkretnej treśći
+## Licencja
+[Plik licencji](LICENSE.md)
