@@ -31,4 +31,20 @@ class DefaultControllerTest extends WebTestCase
             )
         );
     }
+
+    public function testPing(){
+        $client = static::createClient();
+
+        $client->request('GET', '/ping');
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertTrue(
+            $client->getResponse()->headers->contains(
+                'Content-Type',
+                'application/json'
+            )
+        );
+        $this->assertContains($client->getResponse()->getContent(), '["pong"]');
+    }
+
 }

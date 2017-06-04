@@ -119,10 +119,12 @@ class Url
 
     /**
      * @param string $phrase
+     * @return Url
      */
     public function setPhrase($phrase)
     {
         $this->phrase = $phrase;
+        return $this;
     }
 
 
@@ -137,10 +139,12 @@ class Url
 
     /**
      * @param \DateTime $startDate
+     * @return  Url
      */
     public function setStartDate($startDate)
     {
         $this->startDate = $startDate;
+        return $this;
     }
 
     /**
@@ -153,10 +157,12 @@ class Url
 
     /**
      * @param \DateTime $endDate
+     * @return Url
      */
     public function setEndDate($endDate)
     {
         $this->endDate = $endDate;
+        return $this;
     }
 
 
