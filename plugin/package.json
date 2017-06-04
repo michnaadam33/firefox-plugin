@@ -12,5 +12,8 @@
   "license": "MIT",
   "keywords": [
     "jetpack"
-  ]
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
 }

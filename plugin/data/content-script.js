@@ -13,7 +13,6 @@ $(function () {
         var str = self.options.url;
         var re = new RegExp(obj.regex);
         if (str.match(re)) {
-            //Check Start day
             if (obj.startDate !== null) {
                 var startDate = new Date(obj.startDate * 1000);
                 if (startDate.getTime() > now.getTime()) {
@@ -32,16 +31,20 @@ $(function () {
             if (obj.phrase !== null) {
                 var regex = new RegExp(obj.phrase, 'gi');
                 $("body").html($("body").html().replace(regex, '<b style="color: red">!########!</b>'));
+                console.log('Blocked phrase: ' + obj.phrase);
             }
 
             //Block all website
-            $('body').css('border', '1px solid red');
             if (obj.selector !== null) {
                 $(obj.selector).attr('style', '');
                 $(obj.selector).html(blockedElement);
+                console.log('Blocked website: ' + str + ' selector ' + obj.selector);
             } else {
+                $('body').css('border', '1px solid red');
                 $('body').html(blockedElement);
+                console.log('Blocked all website: ' + str);
             }
+            console.log(obj);
         }
     }
 });
