@@ -13,5 +13,5 @@
 * `$ cd plugin` - otwórz folder plugin
 * `$ ./node_modules/.bin/jpm run` - uruchom plugin
 
-## Licencja
+## Licencja BSD
 [Plik licencji](LICENSE.md)
