@@ -29,7 +29,9 @@ $(function () {
 
             // Replace phraze
             if (obj.phrase !== null) {
-                var regex = new RegExp(obj.phrase, 'gi');
+                var regexStr = "[^a-zA-Z0-9]"+obj.phrase+"[^a-zA-Z0-9]";
+                console.log(regexStr);
+                var regex = new RegExp(regexStr, 'gi');
                 $("body").html($("body").html().replace(regex, '<b style="color: red">!########!</b>'));
                 console.log('Blocked phrase: ' + obj.phrase);
             }
@@ -39,7 +41,7 @@ $(function () {
                 $(obj.selector).attr('style', '');
                 $(obj.selector).html(blockedElement);
                 console.log('Blocked website: ' + str + ' selector ' + obj.selector);
-            } else {
+            } else if (obj.phrase === null) {
                 $('body').css('border', '1px solid red');
                 $('body').html(blockedElement);
                 console.log('Blocked all website: ' + str);
